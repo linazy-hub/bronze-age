@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FCFAF6"/>
+    <stop offset="1" stop-color="#F0EBE0"/>
+  </linearGradient>
+  <linearGradient id="g-floor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EFE9DC"/>
+    <stop offset="1" stop-color="#E4DCCB"/>
+  </linearGradient>
+  <linearGradient id="g-cyl" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000000" stop-opacity="0.13"/>
+    <stop offset="0.32" stop-color="#FFFFFF" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#000000" stop-opacity="0.16"/>
+  </linearGradient>
+  <linearGradient id="g-cavity" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7A5B38" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#7A5B38" stop-opacity="0.03"/>
+  </linearGradient>
+  <radialGradient id="g-shadow">
+    <stop offset="0" stop-color="#3A2E22" stop-opacity="0.20"/>
+    <stop offset="1" stop-color="#3A2E22" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="url(#g-wall)"/><rect y="860" width="1000" height="140" fill="url(#g-floor)"/><line x1="0" y1="860" x2="1000" y2="860" stroke="#D8CFBD" stroke-width="1.5"/><g transform="translate(500,860) scale(0.8)"><ellipse cx="0" cy="6" rx="571.2" ry="47.6" fill="url(#g-shadow)" /><polygon points="-520,-700 560,-655 560,-372 -520,-415" fill="#D9B78D" stroke="#96703F" stroke-width="1.6" stroke-linejoin="round"/><polygon points="-520,-415 560,-372 620,-318 -462,-358" fill="#E7CCA6" stroke="#96703F" stroke-width="1.6" stroke-linejoin="round"/><polygon points="-462,-358 620,-318 620,0 -462,0" fill="#C29B6E" stroke="#96703F" stroke-width="1.6" stroke-linejoin="round"/><line x1="-520" y1="-415" x2="560" y2="-372" stroke="#96703F" stroke-width="1.2" stroke-linecap="round"/><line x1="-462" y1="-358" x2="620" y2="-318" stroke="#96703F" stroke-width="1.2" stroke-linecap="round"/><line x1="-432" y1="-340" x2="600" y2="-298" stroke="#96703F" stroke-width="0.7" stroke-linecap="round"/><line x1="-424" y1="-340" x2="600" y2="-296" stroke="#96703F" stroke-width="0.7" stroke-linecap="round"/><line x1="-416" y1="-340" x2="600" y2="-294" stroke="#96703F" stroke-width="0.7" stroke-linecap="round"/></g></svg>

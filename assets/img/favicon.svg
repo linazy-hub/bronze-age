@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="10" fill="#1A1613"/>
+  <!-- a wedged through-tenon, seen from the side -->
+  <rect x="14" y="16" width="16" height="32" fill="#C9A273"/>
+  <rect x="14" y="26" width="16" height="12" fill="#1A1613"/>
+  <polygon points="30,26 50,21 50,43 30,38" fill="#E2C79F"/>
+  <polygon points="44,22.8 50,21 50,43 44,41.2" fill="#A5794A"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FCFAF6"/>
+    <stop offset="1" stop-color="#F0EBE0"/>
+  </linearGradient>
+  <linearGradient id="g-floor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EFE9DC"/>
+    <stop offset="1" stop-color="#E4DCCB"/>
+  </linearGradient>
+  <linearGradient id="g-cyl" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000000" stop-opacity="0.13"/>
+    <stop offset="0.32" stop-color="#FFFFFF" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#000000" stop-opacity="0.16"/>
+  </linearGradient>
+  <linearGradient id="g-cavity" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7A5B38" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#7A5B38" stop-opacity="0.03"/>
+  </linearGradient>
+  <radialGradient id="g-shadow">
+    <stop offset="0" stop-color="#3A2E22" stop-opacity="0.20"/>
+    <stop offset="1" stop-color="#3A2E22" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#g-wall)"/><rect y="774" width="1600" height="126" fill="url(#g-floor)"/><line x1="0" y1="774" x2="1600" y2="774" stroke="#D8CFBD" stroke-width="1.5"/><g transform="translate(800,774) scale(0.8)"><ellipse cx="0" cy="6" rx="367.2" ry="30.6" fill="url(#g-shadow)" /><rect x="-300" y="-700" width="90" height="620" fill="#C29B6E" stroke="#96703F" stroke-width="1.6" /><rect x="210" y="-700" width="90" height="620" fill="#C29B6E" stroke="#96703F" stroke-width="1.6" /><rect x="-230" y="-420" width="240" height="46" fill="#C29B6E" stroke="#96703F" stroke-width="1.6" /><rect x="-24" y="-420" width="48" height="168" fill="#A87F53" stroke="#96703F" stroke-width="1.6" /><rect x="-10" y="-298" width="240" height="46" fill="#C29B6E" stroke="#96703F" stroke-width="1.6" /><rect x="-330" y="-700" width="90" height="700" fill="#D9B78D" stroke="#96703F" stroke-width="1.6" /><line x1="-240" y1="-700" x2="-240" y2="0" stroke="#96703F" stroke-width="1.1" stroke-linecap="round"/><rect x="240" y="-700" width="90" height="700" fill="#D9B78D" stroke="#96703F" stroke-width="1.6" /><line x1="330" y1="-700" x2="330" y2="0" stroke="#96703F" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="0" cy="-700" rx="700" ry="112" fill="#C29B6E" stroke="#96703F" stroke-width="1.6"/><rect x="-700" y="-740" width="1400" height="40" fill="#C29B6E" stroke="none" stroke-width="1.6" /><ellipse cx="0" cy="-740" rx="700" ry="112" fill="#E7CCA6" stroke="#96703F" stroke-width="1.6"/><line x1="-700" y1="-740" x2="-700" y2="-700" stroke="#96703F" stroke-width="1.4" stroke-linecap="round"/><line x1="700" y1="-740" x2="700" y2="-700" stroke="#96703F" stroke-width="1.4" stroke-linecap="round"/><ellipse cx="0" cy="-740" rx="582" ry="94" fill="none" stroke="#96703F" stroke-width="1" opacity="0.16"/><ellipse cx="0" cy="-740" rx="464" ry="76" fill="none" stroke="#96703F" stroke-width="1" opacity="0.16"/><ellipse cx="0" cy="-740" rx="346" ry="58" fill="none" stroke="#96703F" stroke-width="1" opacity="0.16"/><ellipse cx="0" cy="-740" rx="228" ry="40" fill="none" stroke="#96703F" stroke-width="1" opacity="0.16"/></g></svg>
