@@ -144,9 +144,10 @@ def footer(rel=""):
 
 # --- components ------------------------------------------------------------
 def product_card(p, rel="", delay=0.0, tag=None, ratio="ratio-4x5"):
+    img = p.get("photo") or (p["art"] + ".svg")
     return """<a class="card reveal" data-delay="{delay}" data-category="{cat}" href="{rel}product/{slug}.html">
   {tagmarkup}<div class="card__art artframe {ratio}">
-    <img src="{rel}assets/img/{art}.svg" alt="{name}" loading="lazy" width="800" height="1000">
+    <img src="{rel}assets/img/{img}" alt="{name}" loading="lazy" width="800" height="1000">
   </div>
   <div class="card__body">
     <div>
@@ -156,7 +157,7 @@ def product_card(p, rel="", delay=0.0, tag=None, ratio="ratio-4x5"):
     <span class="card__price">{price}</span>
   </div>
 </a>""".format(
-        delay=delay, cat=p["category"], rel=rel, slug=p["slug"], art=p["art"],
+        delay=delay, cat=p["category"], rel=rel, slug=p["slug"], img=img,
         name=p["name"], kind=p["kind"], price="from " + rupees(p["price"]),
         ratio=ratio,
         tagmarkup='<span class="card__tag">%s</span>' % tag if tag else "")
@@ -173,22 +174,26 @@ def joint_notes(items):
 
 def wood_optgroups():
     """<optgroup> markup for the timber families, shared by product pages and
-    the enquiry form. STANDARD_WOOD (European Oak) is deliberately not
-    repeated in here — callers place it as its own leading option."""
+    the enquiry form. STANDARD_WOOD (Walnut) lives inside its family group
+    like every other species — it's just marked selected, so it's what shows
+    by default."""
     parts = []
     for group_name, species in WOOD_GROUPS:
         parts.append('<optgroup label="%s">' % group_name)
-        parts.extend('<option>%s</option>' % s for s in species)
+        for s in species:
+            if s == STANDARD_WOOD:
+                parts.append('<option selected>%s &mdash; standard</option>' % s)
+            else:
+                parts.append('<option>%s</option>' % s)
         parts.append("</optgroup>")
     return "".join(parts)
 
 
 def wood_select(select_id, name="timber"):
-    """The timber picker used on every product page: European oak pinned as
-    the pre-selected standard, everything else grouped below it."""
-    return ('<select class="wood-picker__select" id="{id}" name="{name}">'
-            '<option selected>{standard} &mdash; standard</option>{groups}</select>').format(
-        id=select_id, name=name, standard=STANDARD_WOOD, groups=wood_optgroups())
+    """The timber picker used on every product page: STANDARD_WOOD
+    pre-selected, every species grouped by family."""
+    return ('<select class="wood-picker__select" id="{id}" name="{name}">{groups}</select>').format(
+        id=select_id, name=name, groups=wood_optgroups())
 
 
 # ===========================================================================
@@ -206,7 +211,7 @@ def build_index():
   </button>
   <div class="intro__stage">
     <div class="artframe">
-      <img src="assets/img/intro.svg" alt="Maru round dining table in solid oak" width="1600" height="1000">
+      <img src="assets/img/maru-round-dining-table.png" alt="Maru Round Dining Table in solid walnut" width="1600" height="1000">
     </div>
   </div>
   <div class="intro__panel">
@@ -241,7 +246,7 @@ def build_index():
     <img src="assets/img/hero.svg" alt="Nuki dining table in solid oak with wedged through-tenons" width="2000" height="900">
   </div>
   <div class="hero__meta">
-    <p class="small mute">Nuki Dining Table &middot; European oak &middot; 2400 &times; 900 mm</p>
+    <p class="small mute">Nuki Dining Table &middot; Walnut &middot; 2400 &times; 900 mm</p>
     <p class="small mute">Made to order &middot; 12&ndash;14 weeks</p>
   </div>
 </section>
@@ -291,7 +296,7 @@ def build_index():
 <section class="section--tight">
   <div class="wrap">
     <div class="artframe ratio-21x9 reveal">
-      <img src="assets/img/band-craft.svg" alt="Maru round dining table, base detail" width="1600" height="900">
+      <img src="assets/img/maru-round-dining-table.png" alt="Maru Round Dining Table, base detail" width="1600" height="900">
     </div>
   </div>
 </section>
@@ -353,10 +358,9 @@ def build_index():
     </div>
     <div class="pillar reveal" data-delay="0.08">
       <h3 class="h3">Your timber, one finish</h3>
-      <p>European oak is our standard &mdash; and now the starting point for
-        twenty-eight more species, from walnut and teak to weather-ready thermo
-        timbers. Whichever you choose, it is finished the same way: hardwax
-        oil, matt.</p>
+      <p>Walnut is our standard &mdash; and the starting point for twenty-seven
+        more species, from teak to weather-ready thermo timbers. Whichever you
+        choose, it is finished the same way: hardwax oil, matt.</p>
     </div>
     <div class="pillar reveal" data-delay="0.16">
       <h3 class="h3">Dimensions to suit</h3>
@@ -369,7 +373,7 @@ def build_index():
 
     html = (head("Bronze Age Furniture — solid timber, joined without metal",
                  "Minimalist solid-timber furniture made with Japanese kigumi and sashimono "
-                 "joinery, in European oak or your choice of 28 more species. No screws, no "
+                 "joinery, in walnut or your choice of 27 more species. No screws, no "
                  "brackets, no metal of any kind. Made to order in India.")
             + intro + header("index.html") + body + footer())
     write("index.html", html)
@@ -389,8 +393,8 @@ def build_shop():
   <div class="split" style="align-items:end;margin-bottom:clamp(2rem,5vh,3.5rem)">
     <h1 class="h1">The collection</h1>
     <p class="measure small">Fourteen pieces, joined without metal and cut in the
-      timber you choose &mdash; European oak as standard, or any of twenty-eight
-      more species, from walnut and teak to weather-ready thermo boards. Prices
+      timber you choose &mdash; walnut as standard, or any of twenty-seven
+      more species, from teak to weather-ready thermo boards. Prices
       are a starting point &mdash; every dimension can be cut to your room, and
       the quote follows the size.</p>
   </div>
@@ -408,8 +412,8 @@ def build_shop():
 """.format(buttons=buttons, cards=cards, count=len(PRODUCTS))
 
     html = (head("Shop — Bronze Age Furniture",
-                 "Solid-timber tables, chairs, benches, beds and objects, in European oak "
-                 "or your choice of 28 more species, joined without metal using Japanese "
+                 "Solid-timber tables, chairs, benches, beds and objects, in walnut "
+                 "or your choice of 27 more species, joined without metal using Japanese "
                  "kigumi joinery. Made to order.")
             + header("shop.html") + body + footer())
     write("shop.html", html)
@@ -563,12 +567,12 @@ def build_craft():
     <div class="stack">
       <p class="eyebrow eyebrow--oak">Material</p>
       <h2 class="h2">Every timber. One finish.</h2>
-      <p class="measure">European oak is our standard, kiln-dried to 8&ndash;10%
+      <p class="measure">Walnut is our standard, kiln-dried to 8&ndash;10%
         moisture content and then rested in our shop for a further six weeks before
         it is cut. Quartersawn for tops where flatness matters most; through-and-through
-        elsewhere, because the figure is worth having. Order in any of the twenty-eight
-        further species we offer &mdash; walnut, teak, ash, cedar and more &mdash; and
-        it is prepared to the same standard.</p>
+        elsewhere, because the figure is worth having. Order in any of the twenty-seven
+        further species we offer &mdash; teak, ash, cedar and more &mdash; and it is
+        prepared to the same standard.</p>
       <p class="measure">Whatever the species, it is finished in hardwax oil, matt,
         applied in two coats and cut back by hand between them. Nothing sits on the
         surface as a film. You are touching timber, not lacquer &mdash; which is also
@@ -631,7 +635,7 @@ def build_about():
 
 <section class="section--tight wrap">
   <div class="artframe ratio-3x2 reveal">
-    <img src="assets/img/about.svg" alt="Ita plank table in solid European oak" width="1400" height="1000">
+    <img src="assets/img/about.svg" alt="Ita plank table in solid walnut" width="1400" height="1000">
   </div>
 </section>
 
@@ -690,8 +694,8 @@ def build_about():
   <div class="split">
     <div class="stack">
       <h2 class="h2">On sustainability, honestly</h2>
-      <p>Our European oak is FSC-certified and bought from European mills. The
-        further species we offer are sourced from certified, legally verified
+      <p>Our walnut is FSC-certified and responsibly sourced. The further
+        species we offer are sourced from certified, legally verified
         suppliers to the same standard. We are a small shop, so we will not
         pretend our supply chain is a closed loop.</p>
       <p>What we can claim is more specific: a piece with no metal in it can be fully
@@ -713,7 +717,7 @@ def build_about():
 
     html = (head("About — Bronze Age Furniture",
                  "A workshop with one rule: no metal in any joint. How and why Bronze Age "
-                 "builds solid-timber furniture, in European oak and beyond, using Japanese "
+                 "builds solid-timber furniture, in walnut and beyond, using Japanese "
                  "joinery.")
             + header("about.html") + body + footer())
     write("about.html", html)
@@ -773,7 +777,6 @@ def build_contact():
           <label for="c-wood">Preferred timber (optional)</label>
           <select id="c-wood" name="timber">
             <option value="">No preference &mdash; recommend one</option>
-            <option>{standard_wood} &mdash; standard</option>
             {wood_groups}
           </select>
         </div>
@@ -815,7 +818,7 @@ def build_contact():
 </section>
 """.format(email=BRAND["email"], phone=BRAND["phone"],
            phone_raw=BRAND["phone"].replace(" ", ""), city=BRAND["city"], options=options,
-           standard_wood=STANDARD_WOOD, wood_groups=wood_optgroups())
+           wood_groups=wood_optgroups())
 
     html = (head("Contact — Bronze Age Furniture",
                  "Start an enquiry for a made-to-order solid-timber piece, joined without metal.")
@@ -837,11 +840,14 @@ def build_products():
         rel_cards = "".join(product_card(q, rel="../", delay=j * 0.08)
                             for j, q in enumerate(related))
 
-        detail_art = p["art"] + "-sq"
         # a 2.4-metre table drowns in a portrait crop; wide pieces get a wide frame
         wide = art_aspect(p["art"]) >= 1.9
         lead_ratio = "ratio-3x2" if wide else "ratio-4x5"
-        lead_art = p["art"] + ("-wide" if wide else "")
+        # a real photo (p["photo"]) stands in for both gallery frames, since
+        # there's only one crop of it; drawn pieces still get their two
+        # purpose-drawn SVG variants
+        lead_img = p.get("photo") or (p["art"] + ("-wide" if wide else "") + ".svg")
+        detail_img = p.get("photo") or (p["art"] + "-sq.svg")
 
         body = """<div class="wrap">
   <p class="breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp;
@@ -853,10 +859,10 @@ def build_products():
   <div class="pdp">
     <div class="pdp__gallery">
       <div class="artframe {lead_ratio}">
-        <img src="../assets/img/{art}.svg" alt="{name} in solid European oak" width="800" height="1000">
+        <img src="../assets/img/{lead_img}" alt="{name}" width="800" height="1000">
       </div>
       <div class="artframe ratio-1x1">
-        <img src="../assets/img/{art2}.svg" alt="{name}, detail" loading="lazy" width="1000" height="1000">
+        <img src="../assets/img/{detail_img}" alt="{name}, detail" loading="lazy" width="1000" height="1000">
       </div>
       <figure class="diagram" style="margin:0">
         <img src="../assets/img/diagram-{dia}.svg" alt="Joinery diagram" loading="lazy" width="900" height="520">
@@ -873,9 +879,9 @@ def build_products():
       <div class="wood-picker" style="margin-top:1.75rem">
         <label class="eyebrow" for="wood-{slug}">Choose your timber</label>
         {wood_select}
-        <p class="small mute" style="margin-top:.5rem">Shown in European oak, our
-          standard. Every piece here can be ordered in any of the twenty-nine
-          timbers above &mdash; species outside European oak may adjust price and
+        <p class="small mute" style="margin-top:.5rem">Shown in walnut, our
+          standard. Every piece here can be ordered in any of the twenty-eight
+          timbers above &mdash; species outside walnut may adjust price and
           lead time, confirmed when we send your drawing.</p>
       </div>
 
@@ -955,7 +961,7 @@ def build_products():
             cat=p["category"],
             catname=dict(CATEGORIES)[p["category"]],
             slug=p["slug"], wood_select=wood_select("wood-%s" % p["slug"]),
-            name=p["name"], art=lead_art, art2=detail_art, lead_ratio=lead_ratio,
+            name=p["name"], lead_img=lead_img, detail_img=detail_img, lead_ratio=lead_ratio,
             dia=("kusabi" if any("Kusabi" in k for k, _ in p["joinery"])
                  else "kigoroshi" if any("Kigoroshi" in k for k, _ in p["joinery"])
                  else "kigumi"),

@@ -24,9 +24,10 @@ CATEGORIES = [
 ]
 
 # Timber options offered on every product page and the enquiry form.
-# European oak is the house standard — every piece is designed and photographed
-# in it — but every piece can also be ordered in any species below.
-STANDARD_WOOD = "European Oak"
+# Walnut is the house standard — every piece is designed and photographed in
+# it — but every piece can also be ordered in any other species below.
+# European oak is not offered.
+STANDARD_WOOD = "Walnut"
 WOOD_GROUPS = [
     ("The Exotic Hardwoods", [
         "Walnut", "Maple", "White Ash", "White Oak", "Wenge", "Steam Beech",
@@ -53,6 +54,7 @@ PRODUCTS = [
         "kind": "Dining table",
         "price": 168000,
         "art": "round-table",
+        "photo": "maru-round-dining-table.png",
         "lede": "A solid oak disc carried on four posts locked by a stepped halving cross. "
                 "The base reads as a drawing — every line is a joint doing work.",
         "story": [
@@ -76,7 +78,7 @@ PRODUCTS = [
         "dims": [("Diameter", "1400 mm"), ("Height", "740 mm"),
                  ("Top thickness", "40 mm"), ("Post section", "90 × 90 mm"),
                  ("Seats", "5–6"), ("Weight", "48 kg approx.")],
-        "material": "Solid European oak, quartersawn top",
+        "material": "Solid walnut, quartersawn top",
         "finish": "Hardwax oil, matt — natural",
         "lead": "10–12 weeks",
     },
@@ -110,7 +112,7 @@ PRODUCTS = [
         ],
         "dims": [("Length", "2400 mm"), ("Width", "900 mm"), ("Height", "740 mm"),
                  ("Top thickness", "40 mm"), ("Seats", "8"), ("Weight", "72 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "12–14 weeks",
         "featured": True,
@@ -142,7 +144,7 @@ PRODUCTS = [
         ],
         "dims": [("Length", "2000 mm"), ("Width", "900 mm"), ("Height", "740 mm"),
                  ("Slab thickness", "45 mm"), ("Seats", "6–8"), ("Weight", "86 kg approx.")],
-        "material": "Solid European oak, wide-board",
+        "material": "Solid walnut, wide-board",
         "finish": "Hardwax oil, matt — natural",
         "lead": "12–14 weeks",
     },
@@ -171,7 +173,7 @@ PRODUCTS = [
         ],
         "dims": [("Length", "1400 mm"), ("Depth", "400 mm"), ("Height", "760 mm"),
                  ("Top thickness", "32 mm"), ("Weight", "24 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "8–10 weeks",
     },
@@ -203,7 +205,7 @@ PRODUCTS = [
         "dims": [("Diameter", "500 mm"), ("Height", "500 mm"),
                  ("Top thickness", "30 mm"), ("Column diameter", "90 mm"),
                  ("Weight", "14 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "6–8 weeks",
         "featured": True,
@@ -236,7 +238,7 @@ PRODUCTS = [
         "dims": [("Glass diameter", "1000 mm"), ("Glass thickness", "12 mm"),
                  ("Height", "380 mm"), ("Column diameter", "160 mm"),
                  ("Weight", "38 kg approx.")],
-        "material": "Solid European oak, low-iron toughened glass",
+        "material": "Solid walnut, low-iron toughened glass",
         "finish": "Hardwax oil, matt — natural; polished glass edge",
         "lead": "10–12 weeks",
     },
@@ -267,7 +269,7 @@ PRODUCTS = [
         ],
         "dims": [("Width", "480 mm"), ("Depth", "500 mm"), ("Height", "820 mm"),
                  ("Seat height", "450 mm"), ("Weight", "4.6 kg")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "8–10 weeks",
         "featured": True,
@@ -299,7 +301,7 @@ PRODUCTS = [
         ],
         "dims": [("Width", "620 mm"), ("Depth", "560 mm"), ("Height", "720 mm"),
                  ("Seat height", "420 mm"), ("Weight", "8.2 kg")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "10–12 weeks",
     },
@@ -329,7 +331,7 @@ PRODUCTS = [
         ],
         "dims": [("Width", "1200 mm"), ("Depth", "620 mm"), ("Height", "660 mm"),
                  ("Seat height", "380 mm"), ("Weight", "42 kg approx.")],
-        "material": "Solid European oak, wide-board",
+        "material": "Solid walnut, wide-board",
         "finish": "Hardwax oil, matt — smoked",
         "lead": "12–14 weeks",
     },
@@ -359,7 +361,7 @@ PRODUCTS = [
         ],
         "dims": [("Length", "1400 mm"), ("Depth", "360 mm"), ("Height", "440 mm"),
                  ("Seat thickness", "40 mm"), ("Weight", "22 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "8–10 weeks",
     },
@@ -390,7 +392,7 @@ PRODUCTS = [
         ],
         "dims": [("Length", "2100 mm"), ("Depth", "880 mm"), ("Height", "700 mm"),
                  ("Seat height", "420 mm"), ("Weight", "64 kg approx.")],
-        "material": "Smoked European oak, washed linen upholstery",
+        "material": "Smoked walnut, washed linen upholstery",
         "finish": "Hardwax oil, matt — smoked; charcoal linen",
         "lead": "14–16 weeks",
         "featured": True,
@@ -425,7 +427,7 @@ PRODUCTS = [
         "dims": [("King", "1980 × 2030 mm overall"), ("Queen", "1780 × 2030 mm overall"),
                  ("Height", "320 mm"), ("Headboard height", "780 mm"),
                  ("Rail section", "180 × 40 mm"), ("Weight", "78 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "12–14 weeks",
         "featured": True,
@@ -455,7 +457,7 @@ PRODUCTS = [
         ],
         "dims": [("Width", "400 mm"), ("Depth", "400 mm"), ("Height", "450 mm"),
                  ("Board thickness", "24 mm"), ("Weight", "9 kg approx.")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "6–8 weeks",
     },
@@ -486,7 +488,7 @@ PRODUCTS = [
         ],
         "dims": [("Width", "420 mm"), ("Depth", "300 mm"), ("Height", "450 mm"),
                  ("Seat thickness", "45 mm"), ("Weight", "5.4 kg")],
-        "material": "Solid European oak",
+        "material": "Solid walnut",
         "finish": "Hardwax oil, matt — natural",
         "lead": "4–6 weeks",
     },
