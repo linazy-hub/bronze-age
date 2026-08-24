@@ -13,7 +13,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
-from catalogue import BRAND, CATEGORIES, PRODUCTS, rupees  # noqa: E402
+from catalogue import BRAND, CATEGORIES, PRODUCTS, WOOD_GROUPS, STANDARD_WOOD, rupees  # noqa: E402
 from build_art import PIECES  # noqa: E402
 
 
@@ -171,6 +171,26 @@ def joint_notes(items):
         '<div class="joint-note"><h4>%s</h4><p>%s</p></div>' % (k, v) for k, v in items)
 
 
+def wood_optgroups():
+    """<optgroup> markup for the timber families, shared by product pages and
+    the enquiry form. STANDARD_WOOD (European Oak) is deliberately not
+    repeated in here — callers place it as its own leading option."""
+    parts = []
+    for group_name, species in WOOD_GROUPS:
+        parts.append('<optgroup label="%s">' % group_name)
+        parts.extend('<option>%s</option>' % s for s in species)
+        parts.append("</optgroup>")
+    return "".join(parts)
+
+
+def wood_select(select_id, name="timber"):
+    """The timber picker used on every product page: European oak pinned as
+    the pre-selected standard, everything else grouped below it."""
+    return ('<select class="wood-picker__select" id="{id}" name="{name}">'
+            '<option selected>{standard} &mdash; standard</option>{groups}</select>').format(
+        id=select_id, name=name, standard=STANDARD_WOOD, groups=wood_optgroups())
+
+
 # ===========================================================================
 #  index.html
 # ===========================================================================
@@ -202,7 +222,7 @@ def build_index():
     body = """<section class="hero wrap">
   <div class="split" style="align-items:end">
     <div class="stack">
-      <p class="eyebrow eyebrow--oak">Solid oak &middot; joined without metal</p>
+      <p class="eyebrow eyebrow--oak">Solid timber &middot; joined without metal</p>
       <h1 class="display">Wood that<br>holds itself<br>together.</h1>
     </div>
     <div class="stack measure">
@@ -332,9 +352,11 @@ def build_index():
         one customer, in the order the enquiries arrive.</p>
     </div>
     <div class="pillar reveal" data-delay="0.08">
-      <h3 class="h3">One timber, one finish</h3>
-      <p>European oak, hardwax oil, matt. Refusing a materials palette is how we
-        keep the joinery legible.</p>
+      <h3 class="h3">Your timber, one finish</h3>
+      <p>European oak is our standard &mdash; and now the starting point for
+        twenty-eight more species, from walnut and teak to weather-ready thermo
+        timbers. Whichever you choose, it is finished the same way: hardwax
+        oil, matt.</p>
     </div>
     <div class="pillar reveal" data-delay="0.16">
       <h3 class="h3">Dimensions to suit</h3>
@@ -345,9 +367,10 @@ def build_index():
 </section>
 """.format(cards=cards, arrow=ARROW, count=len(PRODUCTS))
 
-    html = (head("Bronze Age Furniture — solid oak, joined without metal",
-                 "Minimalist solid oak furniture made with Japanese kigumi and sashimono "
-                 "joinery. No screws, no brackets, no metal of any kind. Made to order in India.")
+    html = (head("Bronze Age Furniture — solid timber, joined without metal",
+                 "Minimalist solid-timber furniture made with Japanese kigumi and sashimono "
+                 "joinery, in European oak or your choice of 28 more species. No screws, no "
+                 "brackets, no metal of any kind. Made to order in India.")
             + intro + header("index.html") + body + footer())
     write("index.html", html)
 
@@ -365,9 +388,11 @@ def build_shop():
     body = """<section class="wrap" style="padding-top:clamp(2.5rem,7vh,5rem)">
   <div class="split" style="align-items:end;margin-bottom:clamp(2rem,5vh,3.5rem)">
     <h1 class="h1">The collection</h1>
-    <p class="measure small">Fourteen pieces, all in solid European oak, all joined
-      without metal. Prices are a starting point &mdash; every dimension can be cut
-      to your room, and the quote follows the size.</p>
+    <p class="measure small">Fourteen pieces, joined without metal and cut in the
+      timber you choose &mdash; European oak as standard, or any of twenty-eight
+      more species, from walnut and teak to weather-ready thermo boards. Prices
+      are a starting point &mdash; every dimension can be cut to your room, and
+      the quote follows the size.</p>
   </div>
   <div class="filters" data-filters>
     {buttons}
@@ -383,8 +408,9 @@ def build_shop():
 """.format(buttons=buttons, cards=cards, count=len(PRODUCTS))
 
     html = (head("Shop — Bronze Age Furniture",
-                 "Solid oak tables, chairs, benches, beds and objects, joined without "
-                 "metal using Japanese kigumi joinery. Made to order.")
+                 "Solid-timber tables, chairs, benches, beds and objects, in European oak "
+                 "or your choice of 28 more species, joined without metal using Japanese "
+                 "kigumi joinery. Made to order.")
             + header("shop.html") + body + footer())
     write("shop.html", html)
 
@@ -536,15 +562,18 @@ def build_craft():
   <div class="split">
     <div class="stack">
       <p class="eyebrow eyebrow--oak">Material</p>
-      <h2 class="h2">One timber. One finish.</h2>
-      <p class="measure">European oak, kiln-dried to 8&ndash;10% moisture content and
-        then rested in our shop for a further six weeks before it is cut. Quartersawn
-        for tops where flatness matters most; through-and-through elsewhere, because
-        the figure is worth having.</p>
-      <p class="measure">Finished in hardwax oil, matt, applied in two coats and cut
-        back by hand between them. Nothing sits on the surface as a film. You are
-        touching oak, not lacquer &mdash; which is also why a scratch can be spot-repaired
-        in ten minutes rather than requiring the whole panel to be stripped.</p>
+      <h2 class="h2">Every timber. One finish.</h2>
+      <p class="measure">European oak is our standard, kiln-dried to 8&ndash;10%
+        moisture content and then rested in our shop for a further six weeks before
+        it is cut. Quartersawn for tops where flatness matters most; through-and-through
+        elsewhere, because the figure is worth having. Order in any of the twenty-eight
+        further species we offer &mdash; walnut, teak, ash, cedar and more &mdash; and
+        it is prepared to the same standard.</p>
+      <p class="measure">Whatever the species, it is finished in hardwax oil, matt,
+        applied in two coats and cut back by hand between them. Nothing sits on the
+        surface as a film. You are touching timber, not lacquer &mdash; which is also
+        why a scratch can be spot-repaired in ten minutes rather than requiring the
+        whole panel to be stripped.</p>
     </div>
     <div class="stack">
       <p class="eyebrow eyebrow--oak">Care</p>
@@ -595,8 +624,9 @@ def build_about():
   <p class="eyebrow eyebrow--oak">About</p>
   <h1 class="h1 measure-tight" style="margin-top:1rem">A workshop with one rule.</h1>
   <p class="lede measure" style="margin-top:1.5rem">No metal in any joint. Everything
-    else about Bronze Age &mdash; the proportions, the single timber, the way a piece
-    arrives flat and goes together with a mallet &mdash; follows from that one decision.</p>
+    else about Bronze Age &mdash; the proportions, the choice of timber, the way a
+    piece arrives flat and goes together with a mallet &mdash; follows from that one
+    decision.</p>
 </section>
 
 <section class="section--tight wrap">
@@ -660,8 +690,10 @@ def build_about():
   <div class="split">
     <div class="stack">
       <h2 class="h2">On sustainability, honestly</h2>
-      <p>Our oak is FSC-certified and bought from European mills. We are a small shop,
-        so we will not pretend our supply chain is a closed loop.</p>
+      <p>Our European oak is FSC-certified and bought from European mills. The
+        further species we offer are sourced from certified, legally verified
+        suppliers to the same standard. We are a small shop, so we will not
+        pretend our supply chain is a closed loop.</p>
       <p>What we can claim is more specific: a piece with no metal in it can be fully
         repaired, fully disassembled, and at the very end of its life it is one
         material. Nothing has to be separated before it can be recycled or returned to
@@ -681,7 +713,8 @@ def build_about():
 
     html = (head("About — Bronze Age Furniture",
                  "A workshop with one rule: no metal in any joint. How and why Bronze Age "
-                 "builds solid oak furniture using Japanese joinery.")
+                 "builds solid-timber furniture, in European oak and beyond, using Japanese "
+                 "joinery.")
             + header("about.html") + body + footer())
     write("about.html", html)
 
@@ -737,6 +770,14 @@ def build_contact():
           </select>
         </div>
         <div class="field">
+          <label for="c-wood">Preferred timber (optional)</label>
+          <select id="c-wood" name="timber">
+            <option value="">No preference &mdash; recommend one</option>
+            <option>{standard_wood} &mdash; standard</option>
+            {wood_groups}
+          </select>
+        </div>
+        <div class="field">
           <label for="c-dims">Room or dimensions (optional)</label>
           <input id="c-dims" name="dimensions" type="text" placeholder="e.g. 2200 mm max length, seats 8">
         </div>
@@ -773,10 +814,11 @@ def build_contact():
   </div>
 </section>
 """.format(email=BRAND["email"], phone=BRAND["phone"],
-           phone_raw=BRAND["phone"].replace(" ", ""), city=BRAND["city"], options=options)
+           phone_raw=BRAND["phone"].replace(" ", ""), city=BRAND["city"], options=options,
+           standard_wood=STANDARD_WOOD, wood_groups=wood_optgroups())
 
     html = (head("Contact — Bronze Age Furniture",
-                 "Start an enquiry for a made-to-order solid oak piece, joined without metal.")
+                 "Start an enquiry for a made-to-order solid-timber piece, joined without metal.")
             + header("contact.html") + body + footer())
     write("contact.html", html)
 
@@ -828,6 +870,15 @@ def build_products():
       <p class="pdp__price">from {price} &middot; made to order</p>
       <p class="lede" style="margin-top:1.5rem">{lede}</p>
 
+      <div class="wood-picker" style="margin-top:1.75rem">
+        <label class="eyebrow" for="wood-{slug}">Choose your timber</label>
+        {wood_select}
+        <p class="small mute" style="margin-top:.5rem">Shown in European oak, our
+          standard. Every piece here can be ordered in any of the twenty-nine
+          timbers above &mdash; species outside European oak may adjust price and
+          lead time, confirmed when we send your drawing.</p>
+      </div>
+
       <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0">
         <a class="btn" href="../contact.html"><span>Enquire about this piece</span></a>
         <a class="link-arrow" href="../craft.html" style="align-self:center">The joinery {arrow}</a>
@@ -837,7 +888,7 @@ def build_products():
         <caption class="sr-only">Specification</caption>
         <tbody>
           {specs}
-          <tr><th scope="row">Material</th><td>{material}</td></tr>
+          <tr><th scope="row">Standard timber</th><td>{material}</td></tr>
           <tr><th scope="row">Finish</th><td>{finish}</td></tr>
           <tr><th scope="row">Metal content</th><td>None in any joint</td></tr>
           <tr><th scope="row">Lead time</th><td>{lead}</td></tr>
@@ -903,6 +954,7 @@ def build_products():
 """.format(
             cat=p["category"],
             catname=dict(CATEGORIES)[p["category"]],
+            slug=p["slug"], wood_select=wood_select("wood-%s" % p["slug"]),
             name=p["name"], art=lead_art, art2=detail_art, lead_ratio=lead_ratio,
             dia=("kusabi" if any("Kusabi" in k for k, _ in p["joinery"])
                  else "kigoroshi" if any("Kigoroshi" in k for k, _ in p["joinery"])
