@@ -23,6 +23,28 @@ CATEGORIES = [
     ("objects", "Small Objects"),
 ]
 
+# Timber options offered on every product page and the enquiry form.
+# European oak is the house standard — every piece is designed and photographed
+# in it — but every piece can also be ordered in any species below.
+STANDARD_WOOD = "European Oak"
+WOOD_GROUPS = [
+    ("The Exotic Hardwoods", [
+        "Walnut", "Maple", "White Ash", "White Oak", "Wenge", "Steam Beech",
+        "Cherry", "Sapele", "Red Oak", "Mahogany",
+    ]),
+    ("The Teak Family", [
+        "Burma Teak", "African Teak", "MP Nagpur Teak", "Plantation Teak",
+    ]),
+    ("The Softwoods", [
+        "Nordic Scots Pine", "Whitewood Spruce", "S. Yellow Pine",
+        "Yellow Cedar", "Red Cedar", "Douglas Fir",
+    ]),
+    ("BFP Thermo® Exterior Range", [
+        "Thermo Pine", "Thermo Oak", "Thermo Radiata Pine", "Thermo Ash",
+        "Thermo Ayous", "Thermo Frake", "Thermo Merbau", "Thermo Maple",
+    ]),
+]
+
 PRODUCTS = [
     {
         "slug": "maru-round-dining-table",
