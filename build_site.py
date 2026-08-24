@@ -243,7 +243,7 @@ def build_index():
     </div>
   </div>
   <div class="hero__art artframe ratio-21x9 reveal">
-    <img src="assets/img/hero.svg" alt="Nuki dining table in solid oak with wedged through-tenons" width="2000" height="900">
+    <img src="assets/img/hero.svg" alt="Nuki dining table in solid walnut with wedged through-tenons" width="2000" height="900">
   </div>
   <div class="hero__meta">
     <p class="small mute">Nuki Dining Table &middot; Walnut &middot; 2400 &times; 900 mm</p>
@@ -326,7 +326,7 @@ def build_index():
       <div class="applies__row">
         <dt>Kusabi</dt>
         <dd>The wedged tenon. A slit is cut in the tenon's end; once through the
-          mortise a small oak wedge is driven in, flaring the end like a dovetail
+          mortise a small walnut wedge is driven in, flaring the end like a dovetail
           so it cannot withdraw.</dd>
       </div>
     </dl>
@@ -336,7 +336,7 @@ def build_index():
 <section class="section--tight">
   <div class="wrap">
     <div class="artframe ratio-21x9 reveal">
-      <img src="assets/img/band-bed.svg" alt="Nuki platform bed in solid oak" width="2000" height="760">
+      <img src="assets/img/band-bed.svg" alt="Nuki platform bed in solid walnut" width="2000" height="760">
     </div>
     <div class="hero__meta">
       <p class="small mute">Nuki Platform Bed &middot; assembles with a mallet in fifteen minutes</p>
@@ -443,7 +443,7 @@ def build_craft():
                 "capturing the next &mdash; and the assembly holds its geometry "
                 "because of how the parts are shaped, not because of what has been "
                 "driven through them.",
-                "The reason this matters in practice is humidity. Oak moves. A board "
+                "The reason this matters in practice is humidity. Timber moves. A board "
                 "900mm wide can change 6&ndash;8mm across its width between a humid "
                 "August and a dry February. A rigid metal fixing resists that "
                 "movement until something gives &mdash; usually the wood, in the form "
@@ -488,11 +488,11 @@ def build_craft():
                 "table stretcher, a stool leg &mdash; we use <em>kusabi</em>.",
                 "The tenon passes right through its mortise and stands proud on the "
                 "far side. Slits have been cut into that protruding end. A small "
-                "tapered oak wedge is driven into each slit, flaring the end of the "
+                "tapered walnut wedge is driven into each slit, flaring the end of the "
                 "tenon outwards until it is wider than the hole it came through.",
                 "The result behaves like a dovetail formed after assembly: the joint "
                 "cannot withdraw in its principal direction. It is also completely "
-                "serviceable. Two decades on, if the oak has settled at all, the "
+                "serviceable. Two decades on, if the timber has settled at all, the "
                 "wedge takes one more tap and the joint is new again. Knock the wedge "
                 "back out and the piece comes apart for moving.",
             ],
@@ -588,7 +588,7 @@ def build_craft():
           &lsquo;wood feeding&rsquo; sprays &mdash; hardwax oil does not need them and
           silicone makes future repair difficult.</div></details>
         <details><summary>Spills and marks</summary><div class="acc-body small">
-          Wipe promptly; oak reacts with iron and acidic liquids. A water ring will
+          Wipe promptly; walnut reacts with iron and acidic liquids. A water ring will
           usually lift with a light re-oil of the area. We send a small bottle of the
           same oil with every piece.</div></details>
         <details><summary>Once a year</summary><div class="acc-body small">

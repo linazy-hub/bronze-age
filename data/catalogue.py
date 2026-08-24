@@ -55,16 +55,16 @@ PRODUCTS = [
         "price": 168000,
         "art": "round-table",
         "photo": "maru-round-dining-table.png",
-        "lede": "A solid oak disc carried on four posts locked by a stepped halving cross. "
+        "lede": "A solid walnut disc carried on four posts locked by a stepped halving cross. "
                 "The base reads as a drawing — every line is a joint doing work.",
         "story": [
-            "The Maru began as a question: how little structure can hold a 1400mm oak top "
+            "The Maru began as a question: how little structure can hold a 1400mm walnut top "
             "flat for fifty years? The answer was not more material. It was better geometry.",
             "Four 90mm posts meet a pair of stepped rails that halve into each other at the "
             "centre. The step is not decorative. It transfers the top's load down through the "
             "long grain of each post rather than across the short grain of a fastener.",
-            "The top is loose-laid on buttons that slide in a groove, so the oak breathes with "
-            "the monsoon and shrinks back in February without ever splitting.",
+            "The top is loose-laid on buttons that slide in a groove, so the walnut breathes "
+            "with the monsoon and shrinks back in February without ever splitting.",
         ],
         "joinery": [
             ("Kigumi", "Stepped halving lap at the base cross — the two rails interlock and "
@@ -72,7 +72,7 @@ PRODUCTS = [
             ("Kigoroshi", "Post tenons are cut 0.4mm oversize, the fibres crushed with a "
                           "shop hammer, then driven home. Ambient humidity swells them back "
                           "into the mortise walls and the joint tightens permanently."),
-            ("Buttoned top", "Oak buttons in a sliding groove hold the top down while letting "
+            ("Buttoned top", "Walnut buttons in a sliding groove hold the top down while letting "
                              "it move up to 6mm across the grain seasonally."),
         ],
         "dims": [("Diameter", "1400 mm"), ("Height", "740 mm"),
@@ -90,7 +90,7 @@ PRODUCTS = [
         "price": 224000,
         "art": "trestle-table",
         "lede": "A trestle table whose stretcher passes clean through both legs and is "
-                "locked outside them with a tapered oak wedge you can knock out by hand.",
+                "locked outside them with a tapered walnut wedge you can knock out by hand.",
         "story": [
             "Nuki is the through-beam of a Japanese timber frame — the member that passes "
             "through a post and is wedged beyond it. The whole table is that one idea, at "
@@ -108,7 +108,7 @@ PRODUCTS = [
             ("Nuki through-tenon", "The stretcher passes fully through both leg frames, "
                                    "putting the whole span in compression against the legs."),
             ("Angled apron tenons", "Apron-to-leg joints run at a slight angle and are pinned "
-                                    "with blind oak keys to kill lateral racking."),
+                                    "with blind walnut keys to kill lateral racking."),
         ],
         "dims": [("Length", "2400 mm"), ("Width", "900 mm"), ("Height", "740 mm"),
                  ("Top thickness", "40 mm"), ("Seats", "8"), ("Weight", "72 kg approx.")],
@@ -124,7 +124,7 @@ PRODUCTS = [
         "kind": "Dining table",
         "price": 196000,
         "art": "plank-table",
-        "lede": "Two full-width oak slabs stand as legs; a third bridges them. Three planes, "
+        "lede": "Two full-width walnut slabs stand as legs; a third bridges them. Three planes, "
                 "three joints, nothing else in the room.",
         "story": [
             "The Ita is the most reduced table we make. A slab top, two slab legs, and a "
@@ -140,7 +140,7 @@ PRODUCTS = [
                                  "drawn tight on assembly and free to move seasonally."),
             ("Kigoroshi", "Dovetail shoulders are compressed before assembly so the final "
                           "millimetre of fit is made by the wood recovering, not by force."),
-            ("Draw-bored pins", "Oak pins offset by 1mm pull the shoulders permanently closed."),
+            ("Draw-bored pins", "Walnut pins offset by 1mm pull the shoulders permanently closed."),
         ],
         "dims": [("Length", "2000 mm"), ("Width", "900 mm"), ("Height", "740 mm"),
                  ("Slab thickness", "45 mm"), ("Seats", "6–8"), ("Weight", "86 kg approx.")],
@@ -155,7 +155,7 @@ PRODUCTS = [
         "kind": "Console / desk",
         "price": 92000,
         "art": "trestle-console",
-        "lede": "Two splayed A-frames under a narrow oak plane. Light enough to move alone, "
+        "lede": "Two splayed A-frames under a narrow walnut plane. Light enough to move alone, "
                 "rigid enough to write on.",
         "story": [
             "Uma means horse — the sawhorse, the oldest structure in any workshop. We kept "
@@ -184,7 +184,7 @@ PRODUCTS = [
         "kind": "Side table",
         "price": 54000,
         "art": "column-side-table",
-        "lede": "Three turned oak columns and a soft-edged disc. The columns are hollow-mortised "
+        "lede": "Three turned walnut columns and a soft-edged disc. The columns are hollow-mortised "
                 "into the top from beneath — the joint is felt, never seen.",
         "story": [
             "Hashira is the column, the structural post. Three of them is the minimum number "
@@ -193,7 +193,7 @@ PRODUCTS = [
             "that enters a bored mortise in the underside of the top. The fit is made by "
             "kigoroshi: the tenon is compressed, driven, and left to swell.",
             "Nothing enters the top face. There is no plug, no filler, no screw to bleed a "
-            "dark ring into the oak over time.",
+            "dark ring into the walnut over time.",
         ],
         "joinery": [
             ("Round tenon", "Each column head is a 45mm round tenon into a bored blind mortise."),
@@ -217,12 +217,12 @@ PRODUCTS = [
         "kind": "Coffee table",
         "price": 118000,
         "art": "glass-coffee-table",
-        "lede": "Three oak columns carrying a 12mm float glass disc. The glass rests — it is "
+        "lede": "Three walnut columns carrying a 12mm float glass disc. The glass rests — it is "
                 "not clamped, drilled or bonded.",
         "story": [
             "The problem with a glass top is that every conventional solution involves metal: "
             "a bracket, a bolt, a bonded steel pad. We removed all three.",
-            "Each column is capped with a recessed oak seat and a soft cork gasket. The glass "
+            "Each column is capped with a recessed walnut seat and a soft cork gasket. The glass "
             "drops in and is held by its own weight and the lip of the seat. Lift it off with "
             "two hands to clean beneath it.",
             "Because the columns are free-standing under the glass, you can shift them to suit "
@@ -231,7 +231,7 @@ PRODUCTS = [
         "joinery": [
             ("Seated glass", "A shallow rebate turned into each column head captures the glass "
                              "edge; a cork gasket takes up any floor variation."),
-            ("Laminated columns", "Columns are stave-built from eight oak segments with "
+            ("Laminated columns", "Columns are stave-built from eight walnut segments with "
                                   "long-grain glue lines only, so they will not check."),
             ("No fixings", "Nothing mechanical touches the glass at any point."),
         ],
@@ -261,9 +261,9 @@ PRODUCTS = [
         ],
         "joinery": [
             ("Pinned through-tenon", "Back rail passes through both stiles and is pinned with "
-                                     "riven oak dowel, visible on the outer face."),
+                                     "riven walnut dowel, visible on the outer face."),
             ("Blind keyed tenon", "Seat rails enter the legs on blind tenons locked by an "
-                                  "internal oak key — invisible, and it will not creep."),
+                                  "internal walnut key — invisible, and it will not creep."),
             ("Kigoroshi", "All chair tenons are compressed before assembly; a chair joint that "
                           "starts tight and swells will not develop the seasonal click."),
         ],
@@ -281,7 +281,7 @@ PRODUCTS = [
         "kind": "Armchair",
         "price": 78000,
         "art": "armchair",
-        "lede": "A low oak frame with a floating panel seat and a single wide back rail. "
+        "lede": "A low walnut frame with a floating panel seat and a single wide back rail. "
                 "Made to be sat in for an hour, not an evening.",
         "story": [
             "The Kake sits between a dining chair and a lounge chair — the chair at the end of "
@@ -312,19 +312,19 @@ PRODUCTS = [
         "kind": "Bench / lounge",
         "price": 88000,
         "art": "folded-bench",
-        "lede": "Three wide oak planes mitred into a single folded gesture. It reads as one "
+        "lede": "Three wide walnut planes mitred into a single folded gesture. It reads as one "
                 "piece of paper creased twice.",
         "story": [
             "Ori is to fold. The bench is an exercise in making three heavy boards behave like "
             "one continuous surface.",
             "Every corner is a long mitre reinforced with hidden loose tenons running the full "
             "width. You see an unbroken line of grain turning a corner; inside, there is 400mm "
-            "of glue surface and eight oak splines taking the load.",
+            "of glue surface and eight walnut splines taking the load.",
             "Low enough for a hallway, deep enough to actually sit in.",
         ],
         "joinery": [
             ("Long mitre", "Corners are mitred so grain appears to turn the corner unbroken."),
-            ("Hidden loose tenon", "Full-width oak splines inside each mitre carry the load "
+            ("Hidden loose tenon", "Full-width walnut splines inside each mitre carry the load "
                                    "the mitre alone could not."),
             ("Panel-frame back", "The back plane is housed to allow the wide board to move "
                                  "without opening the mitre."),
@@ -372,11 +372,11 @@ PRODUCTS = [
         "kind": "Sofa",
         "price": 268000,
         "art": "sofa",
-        "lede": "A smoked oak carcass on splayed legs, holding two deep linen cushions. "
+        "lede": "A smoked walnut carcass on splayed legs, holding two deep linen cushions. "
                 "The frame is the furniture; the cushions are removable.",
         "story": [
             "Most sofas are a steel and staple skeleton wearing fabric. The Kura inverts that: "
-            "a visible oak carcass that would be worth having empty, with cushions set into it.",
+            "a visible walnut carcass that would be worth having empty, with cushions set into it.",
             "The side panels are through-tenoned into the base rail and wedged from below, "
             "where the wedges are invisible in use but reachable with the sofa on its back.",
             "Cushion covers are washable and replaceable. When the linen has had its life, "
@@ -387,7 +387,7 @@ PRODUCTS = [
                        "underneath — serviceable, never seen."),
             ("Splayed leg tenons", "Legs enter the base on compound-angle tenons; the splay "
                                    "widens the footprint without a metal bracket."),
-            ("Webbed deck", "Cushion deck is jute-webbed onto an oak sub-frame, tensioned by "
+            ("Webbed deck", "Cushion deck is jute-webbed onto a walnut sub-frame, tensioned by "
                             "wedged rails rather than staples."),
         ],
         "dims": [("Length", "2100 mm"), ("Depth", "880 mm"), ("Height", "700 mm"),
@@ -404,7 +404,7 @@ PRODUCTS = [
         "kind": "Bed",
         "price": 212000,
         "art": "bed",
-        "lede": "A low oak platform whose side rails pass through the headboard posts and "
+        "lede": "A low walnut platform whose side rails pass through the headboard posts and "
                 "show their tenon ends. Sleep loads it tighter every night.",
         "story": [
             "A bed frame fails at the corner. Bolted frames loosen, the corner develops play, "
@@ -420,7 +420,7 @@ PRODUCTS = [
             ("Nuki through-tenon", "Side rails pass fully through the head and foot posts, "
                                    "tenon ends visible on the outer face."),
             ("Kusabi", "Tapered wedges lock each through-tenon and can be re-driven in "
-                       "twenty years if the oak ever settles."),
+                       "twenty years if the timber ever settles."),
             ("Notched slat carrier", "Slats sit in notched cross-beams that lock into the "
                                      "rails — the deck stiffens the whole frame."),
         ],
@@ -439,7 +439,7 @@ PRODUCTS = [
         "kind": "Side table / storage",
         "price": 38000,
         "art": "cube",
-        "lede": "An open oak cube, dovetailed at every corner. Side table one way up, "
+        "lede": "An open walnut cube, dovetailed at every corner. Side table one way up, "
                 "bookshelf the other.",
         "story": [
             "Hako is simply box. Four boards, four corners, and the oldest joint that has ever "
@@ -451,7 +451,7 @@ PRODUCTS = [
         "joinery": [
             ("Through dovetail", "Every corner is a hand-cut through dovetail — the joint "
                                  "cannot pull apart in its principal direction."),
-            ("Rebated back option", "Available with a housed oak back panel that floats in a "
+            ("Rebated back option", "Available with a housed walnut back panel that floats in a "
                                     "groove."),
             ("Stackable", "Locating recesses in the top face register a second cube."),
         ],
@@ -468,7 +468,7 @@ PRODUCTS = [
         "kind": "Stool",
         "price": 28000,
         "art": "plank-stool",
-        "lede": "A thick oak plank on three splayed legs. The first thing we ever made and "
+        "lede": "A thick walnut plank on three splayed legs. The first thing we ever made and "
                 "still the piece we judge the others against.",
         "story": [
             "Every workshop needs a stool. Ours became the test piece — if an apprentice can "
